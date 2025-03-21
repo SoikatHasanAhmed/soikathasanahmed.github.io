@@ -13,13 +13,81 @@
       margin: 0;
       padding: 0;
     }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background: #023e8a;
+      padding: 0.75rem 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: border-bottom 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      border-bottom: 2px solid #90e0ef;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .tab-section {
+      display: none;
+    }
+    .tab-section.active {
+      display: block;
+    }
+    h2 {
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .contact-info a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('.tab-section');
+
     links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(section => section.classList.remove('active'));
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.classList.add('active');
       });
     });
   });
@@ -60,8 +128,8 @@
 
       <section id="publications" class="tab-section">
         <h2>Selected Publications</h2>
+        <p><strong>🔥 New:</strong> <em>Accepted at CVPR 2025</em> — "A Hybrid SNN-ANN Network for Event-based Object Detection with Spatial and Temporal Attention"</p>
         <ul>
-          <li><strong>Ahmed, Soikat Hasan; Finkbeiner, Jan; Neftci, Emre;  (2024)</strong> – A Hybrid SNN-ANN Network for Event-based Object Detection with Spatial and Temporal Attention.</li>
           <li><strong>Ahmed, Soikat Hasan; Jang, Hyeon-Woo; Nadim, Umme Salma Mili; Jung, Yoon Jae;  (2021)</strong> – Deep Event Stereo Leveraged by Event-to-Image Translation. <em>AAAI Conference on Artificial Intelligence</em>.</li>
           <li><strong>Uddin, Syed Nurul; Ahmed, Soikat Hasan; Jung, Yoon Jae;  (2022)</strong> – Unsupervised Deep Event Stereo for Depth Estimation. <em>IEEE Transactions on Circuits and Systems for Video Technology</em>.</li>
           <li><strong>Ahmed, Soikat Hasan; Faisal, F.; Sabrin, S.; Tong, Z.; Hasan, M.; Debnath, D.; Hossain, M.S.; Siddique, A.H.; Alam, J. (2020)</strong> – A Simplified Approach to Develop Low-Cost Semi-Automated Prototype of a Wheelchair. <em>USTA</em>.</li>

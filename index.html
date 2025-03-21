@@ -3,66 +3,71 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soikat Hasan Ahmed</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #1e1e2f;
+      background: #0077b6;
       color: white;
-      padding: 20px;
+      padding: 2rem 1rem;
       text-align: center;
     }
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
     nav {
-      background-color: #2b2b3c;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 10px 0;
+      gap: 1.5rem;
+      background: #023e8a;
+      padding: 0.75rem 1rem;
     }
-    nav button {
-      background: none;
-      border: none;
+    nav a {
       color: white;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: border-bottom 0.3s;
     }
-    nav button.active,
-    nav button:hover {
-      border-bottom: 2px solid #00bcd4;
+    nav a:hover {
+      border-bottom: 2px solid #90e0ef;
     }
-    .section {
-      display: none;
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
       background: white;
-      margin-top: 20px;
+      padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    .section.active {
-      display: block;
+    section {
+      margin-bottom: 2rem;
     }
-    .section h2 {
-      color: #333;
+    h2 {
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
     }
     .contact-info a {
-      color: #00bcd4;
+      color: #0077b6;
       text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -70,62 +75,54 @@
 <body>
   <header>
     <h1>Soikat Hasan Ahmed</h1>
-    <p>PhD Researcher - RWTH Aachen & Forschungszentrum Jülich</p>
+    <p>PhD Researcher at RWTH Aachen & Forschungszentrum Jülich</p>
   </header>
 
   <nav>
-    <button class="tab-btn active" data-target="about">About</button>
-    <button class="tab-btn" data-target="publications">Publications</button>
-    <button class="tab-btn" data-target="contact">Contact</button>
+    <a href="#about">About</a>
+    <a href="#research">Research Interests</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" class="section active">
-    <h2>About Me</h2>
-    <p>Soikat Hasan Ahmed is a PhD researcher at RWTH Aachen University and Forschungszentrum Jülich, Germany. He holds an M.Eng. from Gachon University, South Korea, and a B.Sc. from Daffodil International University, Bangladesh. His research focuses on neuromorphic vision, object detection, hybrid SNN-ANN systems, and transformer-based learning.</p>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a PhD researcher at RWTH Aachen University and Forschungszentrum Jülich, Germany. I received my M.Eng. in AI Software from Gachon University, South Korea, and my B.Sc. in Computer Science from Daffodil International University, Bangladesh. My research focuses on neuromorphic vision, object detection, hybrid SNN-ANN systems, and transformer-based learning techniques.</p>
+    </section>
 
-    <h3>Research Interests</h3>
-    <ul>
-      <li>Neuromorphic Computer Vision</li>
-      <li>Hybrid SNN-ANN Architectures</li>
-      <li>Event-based Cameras</li>
-      <li>3D Perception & Object Detection</li>
-    </ul>
-  </section>
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Neuromorphic Computer Vision</li>
+        <li>Hybrid SNN-ANN Architectures</li>
+        <li>Event-based Cameras</li>
+        <li>Object Detection & 3D Perception</li>
+        <li>Transformers and Attention Mechanisms</li>
+        <li>Self-supervised & Unsupervised Learning</li>
+      </ul>
+    </section>
 
-  <section id="publications" class="section">
-    <h2>Publications</h2>
-    <ul>
-      <li><strong>CVPR 2025:</strong> Efficient event-based object detection: A hybrid neural network with spatial and temporal attention – <em>S.H. Ahmed, J. Finkbeiner, E. Neftci</em></li>
-      <li><strong>AAAI 2021:</strong> Deep event stereo leveraged by event-to-image translation – <em>S.H. Ahmed et al.</em></li>
-      <li><strong>IEEE TCSVT 2022:</strong> Unsupervised deep event stereo for depth estimation – <em>S.H. Ahmed et al.</em></li>
-      <li><strong>USTA 2020:</strong> Low-cost semi-automated wheelchair prototype – <em>S.H. Ahmed et al.</em></li>
-    </ul>
-  </section>
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <ul>
+        <li><strong>Ahmed, S.H., Finkbeiner, J., & Neftci, E. (2025)</strong> – Efficient event-based object detection: A hybrid neural network with spatial and temporal attention. <em>CVPR 2025</em>.</li>
+        <li><strong>Ahmed, S.H., Jang, H.W., Nadim, U.S.M., & Jung, Y.J. (2021)</strong> – Deep event stereo leveraged by event-to-image translation. <em>AAAI Conference</em>.</li>
+        <li><strong>Uddin, S.N., Ahmed, S.H., & Jung, Y.J. (2022)</strong> – Unsupervised deep event stereo for depth estimation. <em>IEEE TCSVT</em>.</li>
+        <li><strong>Ahmed, S.H., et al. (2020)</strong> – A simplified approach to develop low-cost semi-automated prototype of a wheelchair. <em>USTA 2020</em>.</li>
+      </ul>
+    </section>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:s.ahmed@fz-juelich.de">s.ahmed@fz-juelich.de</a></p>
-      <p><strong>Phone:</strong> +49 178 3067190</p>
-      <p><strong>Location:</strong> Aachen, Germany</p>
-      <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=YOUR_ID">View Profile</a></p>
-    </div>
-  </section>
-
-  <script>
-    const buttons = document.querySelectorAll('.tab-btn');
-    const sections = document.querySelectorAll('.section');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        sections.forEach(section => section.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(button.dataset.target).classList.add('active');
-      });
-    });
-  </script>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:s.ahmed@fz-juelich.de">s.ahmed@fz-juelich.de</a></p>
+        <p><strong>Phone:</strong> +49 178 3067190</p>
+        <p><strong>Location:</strong> Aachen, Germany</p>
+        <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=YOUR_ID">View Profile</a></p>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
